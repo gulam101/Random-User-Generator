@@ -1,5 +1,6 @@
 const app = Vue.createApp({
     data() {
+        // Default values dispalyed as placeholder
         return {
             firstName: 'John',
             lastName: 'Doe',
@@ -13,14 +14,13 @@ const app = Vue.createApp({
             const res = await fetch('https://randomuser.me/api')
             const { results } = await res.json()
 
-            console.log(results)
 
             // using the 'This' keyword allows us to access the data
-            this.firstName = 'Sam'
-            this.lastName = 'Smith'
-            this.email = 'Sam@gmail.com'
-            this.gender = 'female'
-            this.picture = 'https://randomuser.me/api/portraits/women/82.jpg'
+            this.firstName = results[0].name.first
+            this.lastName = results[0].name.last
+            this.email = results[0].name.email
+            this.gender = results[0].name.gender
+            this.picture = results[0].name.picture
         },
     },
 })
