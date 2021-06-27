@@ -12,7 +12,8 @@
         <img :class="gender" v-bind:src="picture" v-bind:alt="`${firstName}  ${lastName}`">
         <h1>{{firstName}} {{lastName}}</h1>
         <h3>Email: {{email}}</h3>
-        <button v-on:click="getUser()" v-bind:class="gender">Get Ramdom User</button>
+        <h3>Age: {{DoB}}</h3>
+        <button v-on:click="getUser()" v-bind:class="gender">Get User</button>
     </div>
 
     
