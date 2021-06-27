@@ -9,10 +9,10 @@
 </head>
 <body>
     <div id="script">
-        <img v-bind:src="picture" alt="" srcset="">
+        <img :class="gender" v-bind:src="picture" v-bind:alt="`${firstName}  ${lastName}`">
         <h1>{{firstName}} {{lastName}}</h1>
         <h3>Email: {{email}}</h3>
-        <button>Get Ramdom User</button>
+        <button v-on:click="getUser()" v-bind:class="gender">Get Ramdom User</button>
     </div>
 
     
